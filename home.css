@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500..1000&display=swap');
+.front-page {
+    background-image: url("./Images/myImg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+body,* {
+    margin: 0;
+    font-family:'Orbitron' ;
+}
+#logo {
+    height: 65px;
+    width: 90px;
+    margin-left: 150px;
+    margin-right: 250px;
+}
+.logoIcon {
+    height: 27px;
+    width: 35px;
+    margin-left: 30px;
+}
+.nav {
+    height: 200px;  
+    
+}
+nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.navLinks {
+    margin-right: 70px;
+}
+a {
+    text-decoration: none;
+    color: #bddad8;
+    font-size: 18px;
+}
+#mgRequired {
+    margin-left: 200px;
+}
+.info-page {
+    height: 100vh;
+    background-color: #111111;
+}
+
+.strong-holds h1 {
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    width: 0;
+    animation: typing 3s steps(12, end), blink 0.5s step-end infinite, stay 10s forwards;
+}
+  
+#strong-holds {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  color: #bddad8;
+  font-size: 4rem;
+  line-height: 2rem;
+  margin-top: 100px;
+  margin-left: 50px;
+}
+.my-strong-holds {
+    height: 74vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.my-strong-holds h1 {
+    height: 200px;
+}
