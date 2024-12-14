@@ -1,4 +1,4 @@
-const text = ["FULL STACK DEV", "MERN STACK", "PYTHON STACK", "JAVA", "PYTHON", "DATABASES", "WEBD EVELOPER"];
+const text = ["FULL STACK DEV", "MERN STACK", "PYTHON STACK", "DATABASES", "WEB DEVELOPER"];
 const speed = 100; 
 const waitTime = 2000; 
 
@@ -27,3 +27,8 @@ function type() {
 }
 
 type();
+
+document.getElementById("scroll-down-link").addEventListener("click", (event)=> {
+    event.preventDefault();
+    document.getElementById("info-page").scrollIntoView({behavior:"smooth"});
+});

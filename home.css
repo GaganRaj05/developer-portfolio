@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500..1000&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 .front-page {
     background-image: url("./Images/myImg.png");
     background-repeat: no-repeat;
@@ -11,8 +12,8 @@ body,* {
     font-family:'Orbitron' ;
 }
 #logo {
-    height: 65px;
-    width: 90px;
+    height: 50px;
+    width: 150px;
     margin-left: 150px;
     margin-right: 250px;
 }
@@ -42,9 +43,9 @@ a {
 #mgRequired {
     margin-left: 200px;
 }
-.info-page {
-    height: 100vh;
-    background-color: #111111;
+#info-page {
+    height: 150vh;
+    background-color:#0c0e0d;
 }
 
 .strong-holds h1 {
@@ -67,12 +68,319 @@ a {
   margin-left: 50px;
 }
 .my-strong-holds {
-    height: 74vh;
+    height: 62vh;
     width: 50%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .my-strong-holds h1 {
     height: 200px;
+    margin-left: 50px;
+}
+
+:root {
+    --glow-color: hsl(186 100% 69%);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  
+  
+  .glowing-btn {
+    position: relative;
+    color: var(--glow-color);
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: 0.15em solid var(--glow-color);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-family: "Raleway", sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 1em;
+  
+    -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+      0px 0px 0.5em 0px var(--glow-color);
+    -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+      0px 0px 0.5em 0px var(--glow-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+      0px 0px 0.5em 0px var(--glow-color);
+    animation: border-flicker 2s linear infinite;
+  }
+  
+  .glowing-txt {
+    float: left;
+    margin-right: -0.8em;
+    -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em var(--glow-color);
+    -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em var(--glow-color);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+    animation: text-flicker 3s linear infinite;
+  }
+  
+  .faulty-letter {
+    opacity: 0.5;
+    animation: faulty-flicker 2s linear infinite;
+  }
+  
+  .glowing-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    filter: blur(1em);
+    transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+    background: var(--glow-color);
+    pointer-events: none;
+  }
+  
+  .glowing-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 2em 0.2em var(--glow-color);
+    transition: opacity 100ms linear;
+  }
+  
+  .glowing-btn:hover {
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    animation: none;
+  }
+  
+  .glowing-btn:hover .glowing-txt {
+    animation: none;
+  }
+  
+  .glowing-btn:hover .faulty-letter {
+    animation: none;
+    text-shadow: none;
+    opacity: 1;
+  }
+  
+  .glowing-btn:hover:before {
+    filter: blur(1.5em);
+    opacity: 1;
+  }
+  
+  .glowing-btn:hover:after {
+    opacity: 1;
+  }
+  
+  @keyframes faulty-flicker {
+    0% {
+      opacity: 0.1;
+    }
+    2% {
+      opacity: 0.1;
+    }
+    4% {
+      opacity: 0.5;
+    }
+    19% {
+      opacity: 0.5;
+    }
+    21% {
+      opacity: 0.1;
+    }
+    23% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0.5;
+    }
+    83% {
+      opacity: 0.4;
+    }
+  
+    87% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes text-flicker {
+    0% {
+      opacity: 0.1;
+    }
+  
+    2% {
+      opacity: 1;
+    }
+  
+    8% {
+      opacity: 0.1;
+    }
+  
+    9% {
+      opacity: 1;
+    }
+  
+    12% {
+      opacity: 0.1;
+    }
+    20% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0.3;
+    }
+    30% {
+      opacity: 1;
+    }
+  
+    70% {
+      opacity: 0.7;
+    }
+    72% {
+      opacity: 0.2;
+    }
+  
+    77% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.9;
+    }
+  }
+  
+  @keyframes border-flicker {
+    0% {
+      opacity: 0.1;
+    }
+    2% {
+      opacity: 1;
+    }
+    4% {
+      opacity: 0.1;
+    }
+  
+    8% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+ 
+.glowing-btn {
+    height: 100px;
+    width: 400px;
+    margin-left: 200px;
+    margin-bottom: 200px;
+}
+#scroll-down {
+    height: 150px;
+    width: 150px;
+}
+.next-page {
+    height: 9vh;
+    width: 100%;
+    display: flex;
+}
+#scroll-down-link {
+    margin-left: 700px;
+    
+}
+.navLinks:hover {
+    color:hsl(186 100% 69%); ;
+}
+
+#info-page h1 {
+    color: aliceblue;
+}
+.quote {
+    height: 200px;
+    width: 100%;
+}
+.quote h1 {
+    padding: 50px;
+    padding-left: 150px;
+    padding-top: 100px;
+    padding-right: 100px;
+}
+
+.myInfo {
+  color: aqua;
+}
+.infoCont {
+  display: flex;
+}
+.info {
+  margin-left: 50px;
+  margin-top: 40px;
+  color: #bddad8;
+}
+.projectInfo {
+  height: 15vh;
+  display: flex;
+}
+.infoBars {
+  font-family: 'Orbitron';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+  width: 300px;
+  border-radius: 25px  ;
+  border: 2px solid #eaa369;
+  margin-top: 150px;
+  margin-right: 50px;
+}
+.Services {
+  height: 100vh;
+  background-color: #0c0e0d;
+}
+.infoNum {
+  color: #eaa369;
+  font-size: 35px;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+.infoName {
+  color: #bddad8;
+  font-size: 25px;
+}
+.infoBars:hover {
+  background-color: #eaa369;
+}
+.service-tag {
+  height: 100vh;
+  width: 50%;
+  color: #bddad8;
+  font-family: 'Orbitron';
+}
+.serviceName {
+  width: 50%;
+}
+
+.service-tag p {
+  margin-left: 150px;
+  padding-top:50px ;
+  font-size: 40px;
+  font-family: 'Orbitron';
+
+}
+.service-tag IMG {
+  margin-left: 200px;
 }
